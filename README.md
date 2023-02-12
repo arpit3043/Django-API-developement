@@ -1,4 +1,4 @@
-# (OneFin_assignment)[https://docs.google.com/document/d/1IYGW6CZB5nQ3DmNgBotI10h0bnGep1r5g2D_ZRaFMDc/edit#heading=h.b9f6ujmuzlha]
+# [OneFin_assignment](https://docs.google.com/document/d/1IYGW6CZB5nQ3DmNgBotI10h0bnGep1r5g2D_ZRaFMDc/edit#heading=h.b9f6ujmuzlha)
 OneFin assignment for building movie-collection api for web application with JWT authentication.
 We need to develop a web application which allows people to create collections of movies they like. 
 There are three parts to this:
