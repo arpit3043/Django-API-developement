@@ -46,9 +46,9 @@ with all environment variable that is mentioned in .env_sample file
     3. python manage.py runserver
 
 ## References:
-[Django REST API – CRUD with DRF](https://www.geeksforgeeks.org/django-rest-api-crud-with-drf/)
-[JWT Authentication with Django REST Framework](https://www.geeksforgeeks.org/jwt-authentication-with-django-rest-framework/)
-[YouTube](https://www.youtube.com/)
+- [Django REST API – CRUD with DRF](https://www.geeksforgeeks.org/django-rest-api-crud-with-drf/)
+- [JWT Authentication with Django REST Framework](https://www.geeksforgeeks.org/jwt-authentication-with-django-rest-framework/)
+- [YouTube](https://www.youtube.com/)
 
 ## Authors
 
