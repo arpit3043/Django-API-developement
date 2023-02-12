@@ -1,0 +1,50 @@
+"""onefin URL Configuration
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+"""
+In Django, a WSGI (Web Server Gateway Interface) file is used as the entry point 
+for serving web requests via a web server such as Apache or Nginx. 
+The WSGI file acts as a bridge between the web server and the Django application.
+"""
+from django.contrib import admin
+from django.urls import path
+# import jwt token
+# JWT (JSON Web Token) authentication is a popular method for authenticating API requests in Django.
+# It involves sending a JSON Web Token (JWT) in the request headers to authenticate the client and server.
+"""
+There are several libraries available that can help you implement JWT authentication in Django, 
+including djangorestframework-jwt and djangorestframework-simplejwt. 
+These libraries provide the necessary tools and components to implement JWT authentication, 
+including view classes and authentication backends.
+"""
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+from movie_collection.views import RegisterAPI, LoginApi, MoivesList, CollectionListView, CollectionView, \
+    RequestCounterView
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('register/', RegisterAPI.as_view(), name="register"),
+    path('login/', LoginApi.as_view()),
+    path('movies/', MoivesList.as_view(), name="movies"),
+    path('request-count/', RequestCounterView.as_view(), name="request_count"),
+    path('request-count/reset', RequestCounterView.as_view(), name="request_count_reset"),
+    path('collection/<str:pk>', CollectionView.as_view(), name="collection_by_id"),
+    path('collection/', CollectionListView.as_view(), name="collection_list"),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+]
